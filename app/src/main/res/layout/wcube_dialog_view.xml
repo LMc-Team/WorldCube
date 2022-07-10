@@ -48,13 +48,13 @@
                 android:layout_marginRight="10dp"
                 android:layout_toLeftOf="@id/dialog_button_ok"
                 android:text="Cancel"
-                android:visibility="visible" />
+                android:visibility="gone" />
 
             <com.google.android.material.button.MaterialButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="OK"
-                android:visibility="visible"
+                android:visibility="gone"
                 android:layout_alignParentRight="true"
                 android:id="@+id/dialog_button_ok" />
 
