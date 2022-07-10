@@ -24,12 +24,10 @@ public class WCubeDialog {
         cancelButton = parentView.findViewById(R.id.dialog_button_cancel);
         title = findViewById(R.id.dialog_textview_title);
         message = findViewById(R.id.dialog_textview_message);
-        neutralButton = findViewById(R.id.dialog_button_neutral);
         title.setTypeface(AssetsUtil.getTypeface());
         message.setTypeface(AssetsUtil.getTypeface());
         okButton.setTypeface(AssetsUtil.getTypeface());
         cancelButton.setTypeface(AssetsUtil.getTypeface());
-        neutralButton.setTypeface(AssetsUtil.getTypeface());
         mDialog.setView(parentView);
     }
 
@@ -39,8 +37,6 @@ public class WCubeDialog {
     private TextView message;
     private MaterialButton okButton;
     private MaterialButton cancelButton;
-    private MaterialButton neutralButton;
-
 
     //findViewById(R.id.id)
     public <T extends View> T findViewById(int id) {
@@ -107,20 +103,6 @@ public class WCubeDialog {
         setOkButton("Ok", dialog -> Toast.makeText(mContext,"Fuck",Toast.LENGTH_SHORT).show());
         mDialog.show();
     }
-
-    //方法setNeutralButton 参数是一个string和一个OnWCubeDialogButtonClickListener
-    public WCubeDialog setNeutralButton(String text, OnWCubeDialogButtonClickListener listener) {
-        neutralButton.setText(text);
-        neutralButton.setVisibility(View.VISIBLE);
-        neutralButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                listener.onBtnClicked(WCubeDialog.this);
-            }
-        });
-        return this;
-    }
-
 
     //方法getDialog 返回一个AlertDialog
     public AlertDialog getDialog() {

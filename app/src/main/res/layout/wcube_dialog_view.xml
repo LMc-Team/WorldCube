@@ -6,50 +6,60 @@
 <TextView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:paddingLeft="10dp"
+    android:paddingTop="10dp"
+    android:paddingRight="10dp"
+    android:paddingBottom="0dp"
     android:textSize="40sp"
     android:text="Title"
     android:id="@+id/dialog_textview_title"/>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
         android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:padding="5dp"
             android:textSize="20sp"
             android:text="Message"
             android:id="@+id/dialog_textview_message"/>
 
-        <LinearLayout
+        </LinearLayout>
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:padding="10dp"
             android:orientation="horizontal">
-            <com.google.android.material.button.MaterialButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Neutral"
-                android:visibility="gone"
-                android:layout_weight="1"
-                android:id="@+id/dialog_button_neutral"/>
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/dialog_button_cancel"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@id/dialog_button_ok"
                 android:text="Cancel"
-                android:id="@+id/dialog_button_cancel"
-                android:layout_weight="1"/>
+                android:visibility="visible" />
+
             <com.google.android.material.button.MaterialButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="OK"
-                android:visibility="gone"
-                android:id="@+id/dialog_button_ok"
-                android:layout_weight="1"/>
+                android:visibility="visible"
+                android:layout_alignParentRight="true"
+                android:id="@+id/dialog_button_ok" />
 
+    </RelativeLayout>
 
     </LinearLayout>
-    </LinearLayout>
+
 </LinearLayout>
