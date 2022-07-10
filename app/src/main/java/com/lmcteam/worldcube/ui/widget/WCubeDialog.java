@@ -51,9 +51,9 @@ public class WCubeDialog {
 
     //方法setOkButton 参数是一个string和一个OnWCubeDialogButtonClickListener
     public WCubeDialog setOkButton(String text, OnWCubeDialogButtonClickListener listener) {
-        cancelButton.setText(text);
+        okButton.setText(text);
         okButton.setVisibility(View.VISIBLE);
-        cancelButton.setOnClickListener(new View.OnClickListener() {
+        okButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 listener.onBtnClicked(WCubeDialog.this);
