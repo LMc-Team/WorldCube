@@ -11,6 +11,7 @@ import androidx.appcompat.app.AlertDialog;
 
 import com.google.android.material.button.MaterialButton;
 import com.lmcteam.worldcube.R;
+import com.lmcteam.worldcube.util.AssetsUtil;
 
 public class WCubeDialog {
     private Context mContext;
@@ -24,6 +25,11 @@ public class WCubeDialog {
         title = findViewById(R.id.dialog_textview_title);
         message = findViewById(R.id.dialog_textview_message);
         neutralButton = findViewById(R.id.dialog_button_neutral);
+        title.setTypeface(AssetsUtil.getTypeface());
+        message.setTypeface(AssetsUtil.getTypeface());
+        okButton.setTypeface(AssetsUtil.getTypeface());
+        cancelButton.setTypeface(AssetsUtil.getTypeface());
+        neutralButton.setTypeface(AssetsUtil.getTypeface());
         mDialog.setView(parentView);
     }
 
