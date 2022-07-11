@@ -11,6 +11,7 @@ import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.lmcteam.worldcube.MainActivity;
 import com.lmcteam.worldcube.databinding.ActivityLoginBinding;
+import com.lmcteam.worldcube.ui.widget.WCubeDialog;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -47,9 +48,12 @@ public class LoginActivity extends AppCompatActivity {
         passwordEditText.addTextChangedListener(afterTextChangedListener);
 
         loginButton.setOnClickListener(v -> {
-            Intent intent = new Intent();
-            intent.setClass(LoginActivity.this, MainActivity.class);
-            startActivity(intent);
+            WCubeDialog.initialize(LoginActivity.this).showConfirmDialog("将要登录，确定吗？",(x)->{
+                Intent intent = new Intent();
+                intent.setClass(LoginActivity.this, MainActivity.class);
+                startActivity(intent);
+            });
+
         });
     }
 }

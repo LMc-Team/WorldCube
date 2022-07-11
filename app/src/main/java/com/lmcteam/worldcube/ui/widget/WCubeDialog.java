@@ -12,6 +12,7 @@ import androidx.appcompat.app.AlertDialog;
 import com.google.android.material.button.MaterialButton;
 import com.lmcteam.worldcube.R;
 import com.lmcteam.worldcube.util.AssetsUtil;
+import com.lmcteam.worldcube.util.LangStringUtil;
 
 public class WCubeDialog {
     private Context mContext;
@@ -78,7 +79,7 @@ public class WCubeDialog {
 
     //setText
     public WCubeDialog setText(String text) {
-       message.setText(text);
+        message.setText(text);
         return this;
     }
 
@@ -99,8 +100,30 @@ public class WCubeDialog {
         if (!mDialog.isShowing())
             setText(text);
         setCanCelable(canCelable);
-        setOkButton("Ok", dialog -> Toast.makeText(mContext,"Fuck",Toast.LENGTH_SHORT).show());
+        setTitle("提示");
+        setOkButton("Ok", dialog -> Toast.makeText(mContext, "Fuck", Toast.LENGTH_SHORT).show());
         mDialog.show();
+    }
+
+    public void showConfirmDialog(String text, OnWCubeDialogButtonClickListener listener) {
+        if (mDialog.isShowing()) {
+            return;
+        }
+        setText(text);
+        setCancelButton(LangStringUtil.getStringById(R.string.dialog_cancel), new OnWCubeDialogButtonClickListener() {
+            @Override
+            public void onBtnClicked(WCubeDialog dialog) {
+                dismiss();
+            }
+        });
+        setOkButton(LangStringUtil.getStringById(R.string.dialog_ok), listener);
+        setText(LangStringUtil.getStringById(R.string.dialoig_attention));
+        mDialog.show();
+
+    }
+
+    public void dismiss() {
+        mDialog.dismiss();
     }
 
     //方法getDialog 返回一个AlertDialog

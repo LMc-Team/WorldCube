@@ -7,5 +7,8 @@
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">登录</string>
     <string name="action_sign_in_short">Sign in</string>
+    <string name="dialog_ok">确定</string>
+    <string name="dialog_cancel">取消</string>
+    <string name="dialoig_attention">注意</string>
 
 </resources>
