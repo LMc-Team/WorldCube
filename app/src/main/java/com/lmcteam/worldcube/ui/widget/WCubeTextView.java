@@ -33,7 +33,7 @@ public class WCubeTextView extends androidx.appcompat.widget.AppCompatTextView {
     @Override
     public void setText(CharSequence text, BufferType type) {
         super.setText(text, type);
-        YoYo.with(Techniques.Landing).duration(700).playOn(this);
+        YoYo.with(Techniques.Landing).duration(1500).playOn(this);
     }
 }
 
