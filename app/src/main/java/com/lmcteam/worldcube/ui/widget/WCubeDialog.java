@@ -3,8 +3,6 @@ package com.lmcteam.worldcube.ui.widget;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
@@ -117,7 +115,7 @@ public class WCubeDialog {
             }
         });
         setOkButton(LangStringUtil.getStringById(R.string.dialog_ok), listener);
-        setText(LangStringUtil.getStringById(R.string.dialoig_attention));
+        setTitle(LangStringUtil.getStringById(R.string.dialoig_attention));
         mDialog.show();
 
     }

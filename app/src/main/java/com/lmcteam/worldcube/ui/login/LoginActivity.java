@@ -12,6 +12,8 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.lmcteam.worldcube.MainActivity;
 import com.lmcteam.worldcube.databinding.ActivityLoginBinding;
 import com.lmcteam.worldcube.ui.widget.WCubeDialog;
+import com.lmcteam.worldcube.util.AssetsUtil;
+import com.lmcteam.worldcube.util.LangStringUtil;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -20,6 +22,8 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        LangStringUtil.init(this);
+        AssetsUtil.initialize(this);
 
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
