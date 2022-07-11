@@ -24,8 +24,7 @@ public class WCubeDialog {
         cancelButton = parentView.findViewById(R.id.dialog_button_cancel);
         title = findViewById(R.id.dialog_textview_title);
         message = findViewById(R.id.dialog_textview_message);
-        title.setTypeface(AssetsUtil.getTypeface());
-        message.setTypeface(AssetsUtil.getTypeface());
+
         okButton.setTypeface(AssetsUtil.getTypeface());
         cancelButton.setTypeface(AssetsUtil.getTypeface());
         mDialog.setView(parentView);
@@ -33,8 +32,8 @@ public class WCubeDialog {
 
     private AlertDialog mDialog;
     private View parentView;
-    private TextView title;
-    private TextView message;
+    private WCubeTextView title;
+    private WCubeTextView message;
     private MaterialButton okButton;
     private MaterialButton cancelButton;
 
