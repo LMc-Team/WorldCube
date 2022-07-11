@@ -41,6 +41,7 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     // https://mvnrepository.com/artifact/com.alibaba/fastjson
     implementation 'com.alibaba:fastjson:2.0.8.android'
+    implementation('com.daimajia.androidanimations:library:2.4@aar')
 
 
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
