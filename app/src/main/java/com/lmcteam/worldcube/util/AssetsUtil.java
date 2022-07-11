@@ -18,6 +18,8 @@ public class AssetsUtil {
     }
 
     public static Typeface getTypeface() {
+        if (mContext==null)
+            throw new IllegalStateException("AssetsUtil not initialized");
         return typeface;
     }
 }

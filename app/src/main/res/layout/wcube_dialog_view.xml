@@ -29,6 +29,7 @@
             android:layout_height="wrap_content"
             android:padding="5dp"
             android:textSize="20sp"
+            android:textColor="#A7A7A7"
             android:text="Message"
             android:id="@+id/dialog_textview_message"/>
 
