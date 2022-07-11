@@ -24,6 +24,8 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         LangStringUtil.init(this);
         AssetsUtil.initialize(this);
+        WCubeDialog wCubeDialog = WCubeDialog.initialize(this);
+        wCubeDialog.showPrivacyPolicyDialog();
 
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());

@@ -16,6 +16,10 @@ android {
     }
 
     buildTypes {
+        debug{
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
@@ -39,11 +43,13 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
     testImplementation 'junit:junit:4.13.2'
+    implementation 'net.lingala.zip4j:zip4j:2.11.1'
     // https://mvnrepository.com/artifact/com.alibaba/fastjson
     implementation 'com.alibaba:fastjson:2.0.8.android'
     implementation('com.daimajia.androidanimations:library:2.4@aar')
-    implementation('com.daimajia.androidanimations:library:2.4@aar')
     implementation('com.daimajia.easing:library:2.4@aar')
+// https://mvnrepository.com/artifact/commons-io/commons-io
+    implementation 'commons-io:commons-io:2.11.0'
 
 
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

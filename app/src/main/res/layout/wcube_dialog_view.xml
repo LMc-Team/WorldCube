@@ -1,65 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-<com.lmcteam.worldcube.ui.widget.WCubeTextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:paddingLeft="10dp"
-    android:paddingTop="10dp"
-    android:paddingRight="10dp"
-    android:paddingBottom="0dp"
-    android:textSize="30sp"
-    android:text="Title"
-    android:id="@+id/dialog_textview_title"/>
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.lmcteam.worldcube.ui.widget.WCubeTextView
+        android:id="@+id/dialog_textview_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="0dp"
+        android:text="Title"
+        android:textSize="30sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="5dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="5dp">
 
-        <LinearLayout
+        <ScrollView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-        <com.lmcteam.worldcube.ui.widget.WCubeTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:textSize="20sp"
-            android:textColor="#A7A7A7"
-            android:text="Message"
-            android:id="@+id/dialog_textview_message"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-        </LinearLayout>
+                <com.lmcteam.worldcube.ui.widget.WCubeTextView
+                    android:id="@+id/dialog_textview_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="Message"
+                    android:textColor="#A7A7A7"
+                    android:textSize="17sp" />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="10dp"
-            android:orientation="horizontal">
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/dialog_button_cancel"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-                android:layout_toLeftOf="@id/dialog_button_ok"
-                android:text="Cancel"
-                android:visibility="gone" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/dialog_button_cancel"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_toLeftOf="@id/dialog_button_ok"
+                        android:text="Cancel"
+                        android:visibility="visible" />
 
-            <com.google.android.material.button.MaterialButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="OK"
-                android:visibility="gone"
-                android:layout_alignParentRight="true"
-                android:id="@+id/dialog_button_ok" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/dialog_button_ok"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="OK"
+                        android:visibility="visible" />
 
-    </RelativeLayout>
+                </RelativeLayout>
+            </LinearLayout>
+        </ScrollView>
+
 
     </LinearLayout>
 

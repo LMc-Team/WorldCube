@@ -10,5 +10,9 @@
     <string name="dialog_ok">确定</string>
     <string name="dialog_cancel">取消</string>
     <string name="dialoig_attention">注意</string>
+    <string name="dialog_primary" >隐私政策</string>
+    <string name="dialog_terms" >条款和条件</string>
+    <string name="dialog_disagree" >不同意</string>
+    <string name="dialog_agree" >同意</string>
 
 </resources>

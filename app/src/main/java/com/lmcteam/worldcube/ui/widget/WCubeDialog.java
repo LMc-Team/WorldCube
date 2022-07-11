@@ -1,6 +1,7 @@
 package com.lmcteam.worldcube.ui.widget;
 
 import android.content.Context;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Toast;
@@ -11,6 +12,12 @@ import com.google.android.material.button.MaterialButton;
 import com.lmcteam.worldcube.R;
 import com.lmcteam.worldcube.util.AssetsUtil;
 import com.lmcteam.worldcube.util.LangStringUtil;
+import com.lmcteam.worldcube.util.PathUtil;
+
+import org.apache.commons.io.IOUtils;
+
+import java.io.File;
+import java.io.IOException;
 
 public class WCubeDialog {
     private Context mContext;
@@ -131,6 +138,70 @@ public class WCubeDialog {
 
     public interface OnWCubeDialogButtonClickListener {
         void onBtnClicked(WCubeDialog dialog);
+    }
+
+    public void showPrivacyPolicyDialog()
+    {
+        if (!new File(PathUtil.CHECK_1_PATH).exists())
+        {
+            try {
+                showPrivacyDialog0();
+            } catch (Throwable e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    public void showTermsAndConditionsDialog()
+    {
+        if (!new File(PathUtil.CHECK_2_PATH).exists())
+        {
+            try {
+                showTermsDialog0();
+            } catch (Throwable e) {
+                e.printStackTrace();
+            }
+        }
+
+    }
+    private void showPrivacyDialog0() throws Throwable {
+        if (mDialog.isShowing()) {
+            return;
+        }
+        setCanCelable(false);
+        setText(IOUtils.toString(AssetsUtil.getPrivacyPolicyStream()));
+        setCancelButton(LangStringUtil.getStringById(R.string.dialog_disagree), (x)->{System.exit(0);});
+        setOkButton(LangStringUtil.getStringById(R.string.dialog_agree), (x)->{
+            try {
+                new File(PathUtil.CHECK_1_PATH).createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            dismiss();
+            showTermsAndConditionsDialog();
+        });
+
+        setTitle(LangStringUtil.getStringById(R.string.dialog_primary));
+        mDialog.show();
+    }
+
+    private void showTermsDialog0() throws Throwable {
+        if (mDialog.isShowing()) {
+            return;
+        }
+        setText("");
+        setCanCelable(false);
+        setText(IOUtils.toString(AssetsUtil.getTermsOfServiceStream()));
+        setCancelButton(LangStringUtil.getStringById(R.string.dialog_disagree), (x)->{System.exit(0);});
+        setOkButton(LangStringUtil.getStringById(R.string.dialog_agree), (x)->{
+            try {
+                new File(PathUtil.CHECK_2_PATH).createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            dismiss();
+        });
+        setTitle(LangStringUtil.getStringById(R.string.dialog_terms));
+        mDialog.show();
     }
 
 }
