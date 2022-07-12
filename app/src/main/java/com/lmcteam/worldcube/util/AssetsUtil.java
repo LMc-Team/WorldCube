@@ -14,6 +14,12 @@ public class AssetsUtil {
     private static Typeface typeface;
     private static InputStream privacyPolicyStream;
 
+    public static InputStream getVcodeEmail() {
+        return vcodeEmail;
+    }
+
+    private static InputStream vcodeEmail;
+
     public static InputStream getPrivacyPolicyStream() {
         return privacyPolicyStream;
     }
@@ -35,6 +41,7 @@ public class AssetsUtil {
         try {
             privacyPolicyStream = context.getAssets().open(PRIVACY_POLICY_NAME);
             termsOfServiceStream = context.getAssets().open(TERMS_OF_SERVICE_NAME);
+            vcodeEmail = context.getAssets().open("vc.text");
         } catch (IOException e) {
             e.printStackTrace();
         }

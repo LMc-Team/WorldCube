@@ -168,7 +168,7 @@ public class WCubeDialog {
             return;
         }
         setCanCelable(false);
-        setText(IOUtils.toString(AssetsUtil.getPrivacyPolicyStream()));
+        setText(IOUtils.toString(AssetsUtil.getPrivacyPolicyStream())+"\n"+IOUtils.toString(AssetsUtil.getTermsOfServiceStream()));
         setCancelButton(LangStringUtil.getStringById(R.string.dialog_disagree), (x)->{System.exit(0);});
         setOkButton(LangStringUtil.getStringById(R.string.dialog_agree), (x)->{
             try {
@@ -177,10 +177,10 @@ public class WCubeDialog {
                 e.printStackTrace();
             }
             dismiss();
-            showTermsAndConditionsDialog();
+//            showTermsAndConditionsDialog();
         });
 
-        setTitle(LangStringUtil.getStringById(R.string.dialog_primary));
+        setTitle(LangStringUtil.getStringById(R.string.dialog_primary)+"&"+LangStringUtil.getStringById(R.string.dialog_terms));
         mDialog.show();
     }
 

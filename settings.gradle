@@ -1,8 +1,14 @@
 pluginManagement {
+    /*  repositories {
+          gradlePluginPortal()
+          google()
+
+          mavenCentral()
+      }*/
     repositories {
-        gradlePluginPortal()
-        google()
         mavenCentral()
+        google()
+      gradlePluginPortal()
     }
 }
 dependencyResolutionManagement {
@@ -10,6 +16,9 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven {
+            url('https://www.jitpack.io')
+        }
     }
 }
 rootProject.name = "WorldCube"
